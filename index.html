@@ -10,31 +10,7 @@
         
         
         
-        <script>
-        $(document).ready(function(){
-            
-            $.ajax({
-                type: 'GET',
-			url: "https://api.twitch.tv/helix/streams?user_id=468338786",
-			headers: {
-				'Client-ID': '796pe2sozf7b012pyalq29tn1cfdmu'
-			},
-                    success: function(result){
-                
-              if (result.data.length === 0) {
-                  /*offline*/
-        document.getElementById("live").classList.remove("flash");
-
-				} else {
-                    /*online*/
-        document.getElementById("live").innerHTML = "● LIVE NOW";
-        document.getElementById("live").style.color = "red";
-        document.getElementById("live").classList.add("flash");
-                }
-            }});
-          });
-
-        </script>
+        
        
         
 	</head>
@@ -128,6 +104,33 @@
         <!--to see if stream is live now-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         
+        <script>
+            /* twitch */
+        $(document).ready(function(){
+            
+            $.ajax({
+                type: 'GET',
+			url: "https://api.twitch.tv/helix/streams?user_login=xproto_live",
+			headers: {
+				'Client-ID': '796pe2sozf7b012pyalq29tn1cfdmu'
+			},
+                    success: function(result){
+                
+              if (result.data.length === 0) {
+                  /*offline*/
+        document.getElementById("live").classList.remove("flash");
+
+				} else {
+                    /*online*/
+        document.getElementById("live").innerHTML = "● LIVE NOW";
+        document.getElementById("live").style.color = "red";
+        document.getElementById("live").classList.add("flash");
+                }
+            }});
+          });
+
+        </script>
+        
         <!--next live marqee-->
         <script src="/js/format-google-calendar.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -144,7 +147,7 @@
         itemsTagName: 'p',
         upcomingSelector: '#marq',
         pastSelector: '',
-        upcomingHeading: '',
+        upcomingHeading: '<marquee>',
         pastHeading: '<p> </p>',
         format: ['*date*', '<br/>', '*summary*', ' — ', '*description*', '<br/>', '*location*'],
         timeMin: '2016-06-03T10:00:00-07:00',
