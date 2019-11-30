@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> schedule </title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica:400i|Yatra+One&display=swap" rel="stylesheet">
+        
+	</head>
+	<body>
+        <a href="../">
+        <div id="viewport">
+                <div id="world"></div>
+        </div>
+        </a>
+            
+        
+        <div id="events">
+            <ul id="events-upcoming">
+            </ul>
+            <ul id="events-past">
+            </ul>
+        </div>
+
+
+
+        
+        <span class="container"></span>
+        
+    <script src="/js/format-google-calendar.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+    formatGoogleCalendar.init({
+        calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/xprotostream@gmail.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
+        past: true,
+        upcoming: true,
+        sameDayTimes: true,
+        dayNames: true,
+        pastTopN: -1,
+        upcomingTopN: 5,
+        recurringEvents: true, 
+        itemsTagName: 'li',
+        upcomingSelector: '#events-upcoming',
+        pastSelector: '#events-past',
+        upcomingHeading: '<p> </p>',
+        pastHeading: '<p> </p>',
+        format: ['*date*', '<br/>', '*summary*', ' — ', '*description*', '<br/>', '*location*'],
+        timeMin: '2016-06-03T10:00:00-07:00',
+        timeMax: '2020-06-03T10:00:00-07:00'
+});    
+        
+    </script>   
+    
+    <script src="../js/bg.js"></script>
+    </body>
+</html>

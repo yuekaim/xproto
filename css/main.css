@@ -1,0 +1,202 @@
+
+body {
+    overflow:hidden;
+    /*background-color: gainsboro;*/
+    background-color: papayawhip
+    animation: colorchange 10s infinite; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 10s infinite; /* Chrome and Safari */
+    }
+
+    @keyframes colorchange
+    {
+      0%   {background: gainsboro;}
+      25%  {background: azure;}
+      50%  {background: lightsteelblue;}
+      75%  {background: papayawhip;}
+      100% {background: gainsboro;}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background: gainsboro;}
+      25%  {background: azure;}
+      50%  {background: lightsteelblue;}
+      75%  {background: papayawhip;}
+      100% {background: gainsboro;}
+    }
+
+#viewport {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  perspective: 400;
+  position: absolute;
+  right: 51%;
+  top: 0;
+}
+
+#menu-wrapper {
+     width: 49%;
+    height:100%;
+    background-color: black;
+}
+
+#menu {
+    position: absolute;
+    right:10%;
+    top: 20%;
+    text-align: right;
+}
+
+#events {
+    position: absolute;
+    right:0%;
+    top: 3%;
+    text-align: left;
+    width: 50%;
+}
+
+#events-past{
+    color: whitesmoke;
+}
+
+
+a {
+    font-family: 'Yatra One', cursive;
+    font-size: 50px;
+    text-decoration: none;
+    color: black;
+    cursor: url("../img/flower.svg");
+}
+
+a:hover{
+    
+}
+
+.menu-item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    width: 80%;
+    
+}
+
+
+li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    width: 80%;
+    font-family: 'Yatra One', cursive;
+    font-size: 20px;
+    
+    list-style-type: none;
+    
+    border-bottom: 3px black solid;
+    
+}
+
+li:hover{
+    background-color: black;
+    color: white;
+}
+
+p{
+    font-family: 'Yatra One', cursive;
+    font-size: 50px;
+}
+
+
+
+#world {
+  right: 10%;
+  margin-left: -256px;
+  margin-top: -256px;
+  position: absolute;
+  top: 80%;
+  transform-style: preserve-3d;
+  width: 80%;
+    height: 100%;
+  background-image: url("../img/xproto.png");
+background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#marq {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: black;
+    font-family:serif;
+    font-size: 20px;
+    font-family: 'IM Fell Double Pica', serif;
+    
+   
+}
+
+#img1{
+    display: none;
+    position: absolute;
+    z-index: -100;
+    top:10%;
+    left:10%;
+    width: 60%;
+    height: auto;
+}
+
+#img2{
+    display: none;
+    position: absolute;
+    z-index: -100;
+    top:30%;
+    left:10%;
+    width: 80%;
+    height: auto;
+}
+
+#img3{
+    display: none;
+    position: absolute;
+    z-index: -100;
+    top:20%;
+    left:45%;
+    width: 50%;
+    height: auto;
+}
+
+#img4{
+    display: none;
+    position: absolute;
+    z-index: -100;
+    top:10%;
+    left:60%;
+    width: 40%;
+    height: auto;
+}
+
+#img5{
+    display: none;
+    position: absolute;
+    z-index: -100;
+    top:15%;
+    left:10%;
+    width: 30%;
+    height: auto;
+}
+
+
+.flash{
+    animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #ff0000;    }
+    40%{    color: transparent; }
+    50%{    color: transparent; }
+    60%{    color:transparent;  }
+    100%{   color: #ff0000;    }
+}

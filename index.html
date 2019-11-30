@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> x-proto </title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica:400i|Yatra+One&display=swap" rel="stylesheet">
+        
+        
+        
+        
+        <script>
+        $(document).ready(function(){
+            
+            $.ajax({
+                type: 'GET',
+			url: "https://api.twitch.tv/helix/streams?user_id=468338786",
+			headers: {
+				'Client-ID': '796pe2sozf7b012pyalq29tn1cfdmu'
+			},
+                    success: function(result){
+                
+              if (result.data.length === 0) {
+                  /*offline*/
+        document.getElementById("live").classList.remove("flash");
+
+				} else {
+                    /*online*/
+        document.getElementById("live").innerHTML = "● LIVE NOW";
+        document.getElementById("live").style.color = "red";
+        document.getElementById("live").classList.add("flash");
+                }
+            }});
+          });
+
+        </script>
+       
+        
+	</head>
+	<body>
+        
+        <!--flash for live now-->
+        
+        
+        <div id="viewport">
+                <div id="world"></div>
+        </div>
+        
+        
+        <marquee id="marq" behavior="scroll" direction="left">hello tiffbot</marquee>
+
+        <div id="menu-wrapper">
+            <div id="menu">
+                <a href="https://www.twitch.tv/xproto_live" class="menu-item" id="live" id="live" target="_blank">LIVESTREAM</a><br>
+                <a href="schedule/" class="menu-item" id="schedule">SCHEDULE</a><br>
+                <a href="https://drive.google.com/open?id=1Z7c9QDQWn9nr5xf7UZE-t1GltBPb61fF" class="menu-item" id="archive" target="_blank">ARCHIVE</a><br>
+                <a href="google.com" class="menu-item" id="info">INFO</a><br>
+                <a href="google.com" class="menu-item" id="contact">CONTACT</a>
+                
+            </div>
+        </div>
+
+        
+        <span class="container"></span>
+        <img src="img/live.png" id="img1">
+        <img src="img/schedule.png" id="img2">
+        <img src="img/archive.png" id="img3">
+        <img src="img/info.png" id="img4">
+        <img src="img/conatct.png" id="img5">
+        
+    
+        
+        
+    <script src="js/bg.js"></script>
+        
+    <script>
+    
+      var img1 = document.getElementById("img1"),
+          img2 = document.getElementById("img2"),
+          img3 = document.getElementById("img3"),
+          img4 = document.getElementById("img4"),
+          img5 = document.getElementById("img5"),
+          live = document.getElementById("live"),
+          schedule = document.getElementById("schedule"),
+          archive = document.getElementById("archive"),
+          info = document.getElementById("info"),
+          contact = document.getElementById("contact");
+
+      live.onmouseover = function(){
+        img1.style.display="block";
+      }
+      live.onmouseout = function(){
+        img1.style.display="none";
+      }
+      
+      schedule.onmouseover = function(){
+        img2.style.display="block";
+      }
+      schedule.onmouseout = function(){
+        img2.style.display="none";
+      }
+
+      archive.onmouseover = function(){
+        img3.style.display="block";
+      }
+      archive.onmouseout = function(){
+        img3.style.display="none";
+      }
+      
+      info.onmouseover = function(){
+        img4.style.display="block";
+      }
+      info.onmouseout = function(){
+        img4.style.display="none";
+      }
+
+      contact.onmouseover = function(){
+        img5.style.display="block";
+      }
+      contact.onmouseout = function(){
+        img5.style.display="none";
+      }
+
+
+    </script>  
+    
+        <!--to see if stream is live now-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <!--next live marqee-->
+        <script src="js/format-google-calendar.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+    formatGoogleCalendar.init({
+        calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/xprotostream@gmail.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
+        past: true,
+        upcoming: true,
+        sameDayTimes: true,
+        dayNames: true,
+        pastTopN: -1,
+        upcomingTopN: 2,
+        recurringEvents: true, 
+        itemsTagName: 'p',
+        upcomingSelector: '#marq',
+        pastSelector: '',
+        upcomingHeading: '',
+        pastHeading: '<p> </p>',
+        format: ['*date*', '<br/>', '*summary*', ' — ', '*description*', '<br/>', '*location*'],
+        timeMin: '2016-06-03T10:00:00-07:00',
+        timeMax: '2020-06-03T10:00:00-07:00'
+});    
+        
+    </script>   
+    
+    </body>
+</html>
