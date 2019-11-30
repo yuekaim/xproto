@@ -1,4 +1,3 @@
-
 body {
     overflow:hidden;
     /*background-color: gainsboro;*/
@@ -199,4 +198,63 @@ background-size: 100%;
     50%{    color: transparent; }
     60%{    color:transparent;  }
     100%{   color: #ff0000;    }
+}
+
+#logo{display: none;}
+
+
+
+
+
+/*mobile*/
+@media only screen and (max-width: 600px) {
+    #viewport{display: none;}
+    #world{display: none;}
+    #logo{
+        display: block;
+        width: 40%;
+        position: absolute;
+        left:10px;
+        top: 60px;
+    }
+  
+    #marq {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: black;
+    font-family:serif;
+    font-size: 30px;
+    font-family: 'IM Fell Double Pica', serif;
+    }
+    
+    #menu-wrapper {
+     width: 49%;
+    height:100%;
+    background-color: black;
+    }
+
+    #menu {
+        position: absolute;
+        right:0px;
+        top: 20%;
+        text-align: right;
+    }
+    
+    #img1{
+        left: 40%;
+        top:12%;
+    }
+    #img3{
+        top:30%;
+    }
+    #img4{
+        top: 50%;
+    }
+    #img5{
+        top:80%;
+        left:40%;
+    }
+
+    
 }
